@@ -101,34 +101,46 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ccat="pygmentize -g"
-alias ls="exa -a"
-alias la="exa -lag --header"
-#alias curl="curl -x http://127.0.0.1:7890"
 
 #################
 # Customization #
 #################
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 ## Customized PATH
-export PATH="$PATH:/usr/local/sbin"
+export PATH="/usr/local/sbin:$PATH"
 PLAYGROUND="$HOME/Private/playground"
 GITHUB_PROJECTS="$PLAYGROUND/github-projects"
 # Go bin path
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$HOME/go/bin:$PATH"
 # Ruby 3.0.0 bin path
-export PATH="$PATH:$HOME/.gem/ruby/3.0.0/bin"
+export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 # Hyperledger Fabric Sample bin path
-export PATH="$PATH:$PLAYGROUND/hyperledger/fabric/fabric-samples/bin"
+export PATH="$PLAYGROUND/hyperledger/fabric/fabric-samples/bin:$PATH"
 # BitXHub's GoDuck toolkit bin path
-export PATH="$PATH:$PLAYGROUND/blockchain/goduck"
+export PATH="$PLAYGROUND/blockchain/goduck:$PATH"
 # Unlock music command line tool bin path
-export PATH="$PATH:$GITHUB_PROJECTS/unlock-music-cli/cmd/um"
+export PATH="$GITHUB_PROJECTS/unlock-music-cli/cmd/um:$PATH"
 # Spin command line bin path
-export PATH="$PATH:$GITHUB_PROJECTS/Spin/Bin"
+export PATH="$GITHUB_PROJECTS/Spin/Bin:$PATH"
 alias ispin="wish $GITHUB_PROJECTS/Spin/optional_gui/ispin.tcl"
 # Tcl-tk used by iSpin command lin bin path
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+## Alias
+alias ccat="pygmentize -g"
+alias ls="exa -a"
+alias la="exa -lag --header"
+#alias curl="curl -x http://127.0.0.1:7890"
 
 # HTTP proxy setting
 #export http_proxy=http://127.0.0.1:7890
