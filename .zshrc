@@ -1,5 +1,5 @@
 # Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -72,7 +72,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,6 +106,10 @@ source $ZSH/oh-my-zsh.sh
 # Customization #
 #################
 
+#
+## Custom environment variables
+#
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -116,27 +120,42 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-## Customized PATH
-export PATH="/usr/local/sbin:$PATH"
 PLAYGROUND="$HOME/Private/playground"
 GITHUB_PROJECTS="$PLAYGROUND/github-projects"
+
+# /usr/local/sbin path
+export PATH="/usr/local/sbin:$PATH"
+
 # Go bin path
 export PATH="$HOME/go/bin:$PATH"
+
 # Ruby 3.0.0 bin path
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
+
 # Hyperledger Fabric Sample bin path
-export PATH="$PLAYGROUND/hyperledger/fabric/fabric-samples/bin:$PATH"
+#export PATH="$PLAYGROUND/hyperledger/fabric/fabric-samples/bin:$PATH"
+
 # BitXHub's GoDuck toolkit bin path
-export PATH="$PLAYGROUND/blockchain/goduck:$PATH"
+#export PATH="$PLAYGROUND/blockchain/goduck:$PATH"
+
 # Unlock music command line tool bin path
-export PATH="$GITHUB_PROJECTS/unlock-music-cli/cmd/um:$PATH"
+#export PATH="$GITHUB_PROJECTS/unlock-music-cli/cmd/um:$PATH"
+
 # Spin command line bin path
 export PATH="$GITHUB_PROJECTS/Spin/Bin:$PATH"
 alias ispin="wish $GITHUB_PROJECTS/Spin/optional_gui/ispin.tcl"
+
 # Tcl-tk used by iSpin command lin bin path
 export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
+# HTTP proxy setting
+#export http_proxy=http://127.0.0.1:7890
+#export https_proxy=$http_proxy
+
+#
 ## Alias
+#
+
 alias ccat="pygmentize -g"
 alias ls="exa -a"
 alias la="exa -lag --header"
@@ -146,9 +165,9 @@ alias la="exa -lag --header"
 #export http_proxy=http://127.0.0.1:7890
 #export https_proxy=$http_proxy
 
-# Autojump setting. Learn more at https://github.com/wting/autojump
-[[ -s /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
+#
+## Other plugins and tools
+#
 
 # Atuin setting. Learn more at https://github.com/ellie/atuin 
 #export ATUIN_NOBIND="true"
@@ -156,19 +175,34 @@ autoload -U compinit && compinit -u
 #bindkey '^r' _atuin_search_widget
 #alias his="atuin search -i"
 
+# Autojump setting. Learn more at https://github.com/wting/autojump
+[[ -s /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
 # fzf setting. Learn more at https://github.com/junegunn/fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# GPG setting. Learn more at https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
+export GPG_TTY=$(tty)
+
+# iTerm2 shell integration setting. Learn more at https://github.com/browsh-org/browsh
+#source ~/.iterm2_shell_integration.zsh
+
+# Jekyll build setting
+export SDKROOT=$(xcrun --show-sdk-path)
 
 # NVM setting. Learn more at https://github.com/nvm-sh/nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# pyenv setting. Learn more at https://github.com/pyenv/pyenv#getting-pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # rbenv setting. Learn more at https://github.com/rbenv/rbenv
 eval "$(rbenv init - zsh)"
-
-# Jekyll build setting
-export SDKROOT=$(xcrun --show-sdk-path)
 
 # The Fuck alias setting. Learn more at https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
@@ -211,9 +245,16 @@ eval $(thefuck --alias)
 # - A portable command-line YAML, JSON, XML, CSV and properties processor, just like jq
 # - Learn more at https://github.com/mikefarah/yq
 
+## Remove duplicate entries in PATH
+# Snippts from https://www.linuxjournal.com/content/removing-duplicate-path-entries
+# Use Perl
+#export PATH=$(perl -E 'chomp($_=<>);say join":",grep{$_&&!$_{$_}++}split/:/' <<<$PATH)
+# Or use awk
+export PATH=$(echo $PATH | awk -v RS=: '!($0 in a) {a[$0]; printf("%s%s", col, $0); col=":"; }')
+
 ########################
 # End of customization #
 ########################
 
 # Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
