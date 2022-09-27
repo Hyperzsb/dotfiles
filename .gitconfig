@@ -1,0 +1,87 @@
+# Core settings
+[core]
+    # Global .gitignore
+	excludesfile = /Users/hyperzsb/.gitignore_global
+    # Use delta as the default pager. Learn more at https://github.com/dandavison/delta
+    pager = delta
+
+# User infomation settings
+[user]
+    # User name
+    name = hyperzsb
+    # User email
+    email = hyperzsb@qq.com
+    # GPG key
+    signingkey = 91DDD54108F466F4
+
+# HTTP protocol settings
+[http]
+    # Use HTTP proxy
+#   proxy = http://127.0.0.1:7890
+
+# HTTPS protocol settings
+[https]
+    # Use HTTPS proxy
+#   proxy = https://127.0.0.1:7890
+
+# `init` command settings
+[init]
+    # The default branch is "master"
+    defaultBranch = "master"
+
+# `commit` command settings
+[commit]
+    # Set a commit messamge template
+	template = /Users/hyperzsb/.stCommitMsg
+
+# `merge` command settings
+[merge]
+    ## Never do fast-forward
+    ff = false
+    conflictstyle = diff3
+
+# `push` command settings
+[push]
+	default = simple
+
+# `pull` command settings
+[pull]
+    # Apply rebase if feasible
+    rebase = true
+    ff = only
+
+# `diff` command settings
+[diff]
+    colorMoved = default
+
+[interactive]
+    diffFilter = delta --color-only --features=interactive
+
+[add.interactive]
+    useBuiltin = false
+
+# Delta settings. Learn more at https://github.com/dandavison/delta
+[delta]
+    features = decorations
+    navigate = true    # use n and N to move between diff sections
+    light = false  
+
+[delta "decorations"]
+    commit-decoration-style = blue ol
+    commit-style = raw
+    file-style = omit
+    hunk-header-decoration-style = blue box
+    hunk-header-file-style = red
+    hunk-header-line-number-style = "#067a00"
+    hunk-header-style = file line-number syntax
+    line-numbers = true
+
+# Use sourcetree as the diff tool. Learn more at https://www.sourcetreeapp.com/
+#[difftool "sourcetree"]
+#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+#	path = 
+
+# Use sourcetree as the merge tool. Learn more at https://www.sourcetreeapp.com/
+#[mergetool "sourcetree"]
+#	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+#	trustExitCode = true
