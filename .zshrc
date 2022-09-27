@@ -72,7 +72,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting python)
+plugins=(python git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -221,9 +221,17 @@ eval $(thefuck --alias)
 # - A `cat` command clone with syntax highlighting and Git integration
 # - Learn more at https://github.com/sharkdp/bat
 #
+# bottom
+# - Yet another cross-platform graphical process/system monitor
+# - Learn more at https://github.com/ClementTsang/bottom
+#
 # cheat
 # - An interactive cheatsheet tool on the command-line.
 # - Learn more at https://github.com/cheat/cheat 
+#
+# delta
+# - A syntax-highlighting pager for git, diff, and grep output
+# - Learn more at https://github.com/dandavison/delta
 #
 # exa
 # - A colorful alternative of the outstanding `ls` command
@@ -233,9 +241,21 @@ eval $(thefuck --alias)
 # - An auto-completion tool for various terminals
 # - Learn more at https://github.com/withfig/autocomplete
 #
+# gping
+# - A graphic alternative of the `ping` command
+# - Learn more at https://github.com/orf/gping
+#
+# hyperfine
+# - A command-line benchmarking tool
+# - Learn more at https://github.com/sharkdp/hyperfine
+#
 # jq
 # - A command-line JSON processor
 # - Learn more at https://github.com/stedolan/jq
+#
+# procs
+# - A modern replacement for the `ps` command
+# - Learn more at https://github.com/dalance/procs
 #
 # pygmentize
 # - An generic syntax highlighter written in Python. Used as a colorful `cat` command
