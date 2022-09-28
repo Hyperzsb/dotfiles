@@ -2,5 +2,5 @@
 
 for script in ./scripts/*
 do
-    source $script
+    source "$script"
 done
