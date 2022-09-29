@@ -72,7 +72,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(python git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting wakatime)
+plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -245,6 +245,10 @@ eval $(thefuck --alias)
 # - A graphic alternative of the `ping` command
 # - Learn more at https://github.com/orf/gping
 #
+# hub
+# - A command-line tool that makes git easier to use with GitHub
+# - Learn more at https://github.com/github/hub
+#
 # hyperfine
 # - A command-line benchmarking tool
 # - Learn more at https://github.com/sharkdp/hyperfine
@@ -252,6 +256,10 @@ eval $(thefuck --alias)
 # jq
 # - A command-line JSON processor
 # - Learn more at https://github.com/stedolan/jq
+#
+# neofetch
+# - A command-line system information tool
+# - Learn more at https://github.com/dylanaraps/neofetch
 #
 # procs
 # - A modern replacement for the `ps` command
