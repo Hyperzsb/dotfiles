@@ -62,20 +62,8 @@ local exit_code="%(?,,%{$fg[red]%}(%?%)%{$reset_color%})"
 # % ys @ ys-mbp in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
 
-PROMPT="
-%{$terminfo[bold]$fg[green]%}➜ %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
-%{$reset_color%}in \
-%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
-${hg_info}\
-${git_info}\
-${venv_info}\
- \
-[%*] $exit_code
-%{$terminfo[bold]$fg[green]%}➜ %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
-
 #PROMPT="
-#%{$terminfo[bold]$fg[green]%}-> %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
+#%{$terminfo[bold]$fg[green]%}➜ %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
 #%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 #%{$reset_color%}in \
 #%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
@@ -84,4 +72,28 @@ ${venv_info}\
 #${venv_info}\
 # \
 #[%*] $exit_code
-#%{$terminfo[bold]$fg[green]%}-> %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+#%{$terminfo[bold]$fg[green]%}➜ %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+
+#PROMPT="
+#%{$fg[green]%}➜  %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
+#%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
+#%{$reset_color%}in \
+#%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
+#${hg_info}\
+#${git_info}\
+#${venv_info}\
+# \
+#[%*] $exit_code
+#%{$fg[green]%}➜  %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+
+PROMPT="
+%{$terminfo[bold]$fg[green]%}> %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
+%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
+%{$reset_color%}in \
+%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
+${hg_info}\
+${git_info}\
+${venv_info}\
+ \
+[%*] $exit_code
+%{$terminfo[bold]$fg[green]%}> %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"

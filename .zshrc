@@ -142,11 +142,11 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 #export PATH="$GITHUB_PROJECTS/unlock-music-cli/cmd/um:$PATH"
 
 # Spin command line bin path
-export PATH="$GITHUB_PROJECTS/Spin/Bin:$PATH"
-alias ispin="wish $GITHUB_PROJECTS/Spin/optional_gui/ispin.tcl"
+#export PATH="$GITHUB_PROJECTS/Spin/Bin:$PATH"
+#alias ispin="wish $GITHUB_PROJECTS/Spin/optional_gui/ispin.tcl"
 
 # Tcl-tk used by iSpin command lin bin path
-export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+#export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
 # HTTP proxy setting
 #export http_proxy=http://127.0.0.1:7890
@@ -175,7 +175,7 @@ alias la="exa -lag --header"
 #bindkey '^r' _atuin_search_widget
 #alias his="atuin search -i"
 
-# Autojump setting. Learn more at https://github.com/wting/autojump
+# autojump setting. Learn more at https://github.com/wting/autojump
 [[ -s /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh
 autoload -U compinit && compinit -u
 
@@ -192,20 +192,20 @@ export GPG_TTY=$(tty)
 export SDKROOT=$(xcrun --show-sdk-path)
 
 # NVM setting. Learn more at https://github.com/nvm-sh/nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pyenv setting. Learn more at https://github.com/pyenv/pyenv#getting-pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 # rbenv setting. Learn more at https://github.com/rbenv/rbenv
 eval "$(rbenv init - zsh)"
 
 # The Fuck alias setting. Learn more at https://github.com/nvbn/thefuck
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
 ###############
 # Other tools #
@@ -233,6 +233,10 @@ eval $(thefuck --alias)
 # - A syntax-highlighting pager for git, diff, and grep output
 # - Learn more at https://github.com/dandavison/delta
 #
+# dust
+# - A more intuitive version of `du` in rust 
+# - Learn more at https://github.com/bootandy/dust
+#
 # exa
 # - A colorful alternative of the outstanding `ls` command
 # - Learn more at https://github.com/ogham/exa
@@ -240,6 +244,10 @@ eval $(thefuck --alias)
 # fig
 # - An auto-completion tool for various terminals
 # - Learn more at https://github.com/withfig/autocomplete
+#
+# gitui
+# - GitUI provides you with the comfort of a git GUI but right in your terminal
+# - Learn more at https://github.com/extrawurst/gitui
 #
 # gping
 # - A graphic alternative of the `ping` command
