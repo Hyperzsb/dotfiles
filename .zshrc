@@ -157,8 +157,11 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 #
 
 alias ccat="pygmentize -g"
-alias ls="exa -a"
-alias la="exa -lag --header"
+alias l1="exa -a1F"
+alias la="exa -aglF --header"
+alias ld="exa -a1FD"
+alias lg="la --git"
+alias ls="exa -aF"
 #alias curl="curl -x http://127.0.0.1:7890"
 
 # HTTP proxy setting
@@ -225,6 +228,10 @@ eval "$(rbenv init - zsh)"
 # - Yet another cross-platform graphical process/system monitor
 # - Learn more at https://github.com/ClementTsang/bottom
 #
+# broot
+# - A better way to navigate directories, beyond `tree`
+# - Learn more at https://github.com/Canop/broot
+#
 # cheat
 # - An interactive cheatsheet tool on the command-line.
 # - Learn more at https://github.com/cheat/cheat 
@@ -277,6 +284,10 @@ eval "$(rbenv init - zsh)"
 # - An generic syntax highlighter written in Python. Used as a colorful `cat` command
 # - Learn more at https://github.com/pygments/pygments
 #
+# tokei
+# - Tokei is a program that displays statistics about your code.
+# - Learn more at https://github.com/XAMPPRocky/tokei
+#
 # yq
 # - A portable command-line YAML, JSON, XML, CSV and properties processor, just like jq
 # - Learn more at https://github.com/mikefarah/yq
@@ -291,6 +302,8 @@ export PATH=$(echo $PATH | awk -v RS=: '!($0 in a) {a[$0]; printf("%s%s", col, $
 ########################
 # End of customization #
 ########################
+
+source /Users/hyperzsb/.config/broot/launcher/bash/br
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
