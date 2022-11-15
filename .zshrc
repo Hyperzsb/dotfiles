@@ -106,8 +106,10 @@ source $ZSH/oh-my-zsh.sh
 # Customization #
 #################
 
-#
-## Custom environment variables
+#####
+####
+### Custom environment variables
+##
 #
 
 # set PATH so it includes user's private bin if it exists
@@ -152,8 +154,10 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 #export http_proxy=http://127.0.0.1:7890
 #export https_proxy=$http_proxy
 
-#
-## Alias
+#####
+####
+### Alias
+##
 #
 
 alias ccat="pygmentize -g"
@@ -164,26 +168,15 @@ alias lg="la --git"
 alias ls="exa -aF"
 #alias curl="curl -x http://127.0.0.1:7890"
 
+#####
+####
+### Miscellaneous Settings
+##
+#
+
 # HTTP proxy setting
 #export http_proxy=http://127.0.0.1:7890
 #export https_proxy=$http_proxy
-
-#
-## Other plugins and tools
-#
-
-# Atuin setting. Learn more at https://github.com/ellie/atuin 
-#export ATUIN_NOBIND="true"
-#eval "$(atuin init zsh)"
-#bindkey '^r' _atuin_search_widget
-#alias his="atuin search -i"
-
-# autojump setting. Learn more at https://github.com/wting/autojump
-[[ -s /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh
-autoload -U compinit && compinit -u
-
-# fzf setting. Learn more at https://github.com/junegunn/fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # GPG setting. Learn more at https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
 export GPG_TTY=$(tty)
@@ -194,105 +187,144 @@ export GPG_TTY=$(tty)
 # Jekyll build setting
 export SDKROOT=$(xcrun --show-sdk-path)
 
-# NVM setting. Learn more at https://github.com/nvm-sh/nvm
+#####
+####
+### Plugins and Tools
+##
+#
+
+# ag (The Silver Searcher)
+# - A code search tool for general purposes
+# - Learn more at https://github.com/ggreer/the_silver_searcher
+
+# Atuin 
+# - Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands.
+# - Learn more at https://github.com/ellie/atuin 
+#export ATUIN_NOBIND="true"
+#eval "$(atuin init zsh)"
+#bindkey '^r' _atuin_search_widget
+#alias his="atuin search -i"
+
+# autojump
+# - A cd command that learns - easily navigate directories from the command line
+# - Learn more at https://github.com/wting/autojump
+[[ -s /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh ]] && source /Users/hyperzsb/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
+# bat
+# - A `cat` command clone with syntax highlighting and Git integration
+# - Learn more at https://github.com/sharkdp/bat
+
+# bottom
+# - Yet another cross-platform graphical process/system monitor
+# - Learn more at https://github.com/ClementTsang/bottom
+
+# broot
+# - A better way to navigate directories, beyond `tree`
+# - Learn more at https://github.com/Canop/broot
+source /Users/hyperzsb/.config/broot/launcher/bash/br
+
+# cheat
+# - An interactive cheatsheet tool on the command-line.
+# - Learn more at https://github.com/cheat/cheat 
+
+# delta
+# - A syntax-highlighting pager for git, diff, and grep output
+# - Learn more at https://github.com/dandavison/delta
+
+# dust
+# - A more intuitive version of `du` in rust 
+# - Learn more at https://github.com/bootandy/dust
+
+# exa
+# - A colorful alternative of the outstanding `ls` command
+# - Learn more at https://github.com/ogham/exa
+
+# fig
+# - An auto-completion tool for various terminals
+# - Learn more at https://github.com/withfig/autocomplete
+
+# fzf
+# - A command-line fuzzy finder
+# - Learn more at https://github.com/junegunn/fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# g
+# - Simple go version manager
+# - Learn more at https://github.com/stefanmaric/g
+export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+alias goenv="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+ 
+# gitui
+# - GitUI provides you with the comfort of a git GUI but right in your terminal
+# - Learn more at https://github.com/extrawurst/gitui
+
+# gping
+# - A graphic alternative of the `ping` command
+# - Learn more at https://github.com/orf/gping
+
+# hub
+# - A command-line tool that makes git easier to use with GitHub
+# - Learn more at https://github.com/github/hub
+
+# hyperfine
+# - A command-line benchmarking tool
+# - Learn more at https://github.com/sharkdp/hyperfine
+
+# jq
+# - A command-line JSON processor
+# - Learn more at https://github.com/stedolan/jq
+
+# neofetch
+# - A command-line system information tool
+# - Learn more at https://github.com/dylanaraps/neofetch
+
+# nvm
+# - Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions
+# - Learn more at https://github.com/nvm-sh/nvm
 #export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pyenv setting. Learn more at https://github.com/pyenv/pyenv#getting-pyenv
+# procs
+# - A modern replacement for the `ps` command
+# - Learn more at https://github.com/dalance/procs
+
+# pyenv
+# - Simple Python version management
+# - Learn more at https://github.com/pyenv/pyenv#getting-pyenv
 #export PYENV_ROOT="$HOME/.pyenv"
 #command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 #eval "$(pyenv init -)"
 
-# rbenv setting. Learn more at https://github.com/rbenv/rbenv
-eval "$(rbenv init - zsh)"
-
-# The Fuck alias setting. Learn more at https://github.com/nvbn/thefuck
-#eval $(thefuck --alias)
-
-###############
-# Other tools #
-###############
-
-# There are just some notes on the tools that need no configuration in this file.
-#
-# ag (The Silver Searcher)
-# - A code search tool for general purposes
-# - Learn more at https://github.com/ggreer/the_silver_searcher
-#
-# bat
-# - A `cat` command clone with syntax highlighting and Git integration
-# - Learn more at https://github.com/sharkdp/bat
-#
-# bottom
-# - Yet another cross-platform graphical process/system monitor
-# - Learn more at https://github.com/ClementTsang/bottom
-#
-# broot
-# - A better way to navigate directories, beyond `tree`
-# - Learn more at https://github.com/Canop/broot
-#
-# cheat
-# - An interactive cheatsheet tool on the command-line.
-# - Learn more at https://github.com/cheat/cheat 
-#
-# delta
-# - A syntax-highlighting pager for git, diff, and grep output
-# - Learn more at https://github.com/dandavison/delta
-#
-# dust
-# - A more intuitive version of `du` in rust 
-# - Learn more at https://github.com/bootandy/dust
-#
-# exa
-# - A colorful alternative of the outstanding `ls` command
-# - Learn more at https://github.com/ogham/exa
-#
-# fig
-# - An auto-completion tool for various terminals
-# - Learn more at https://github.com/withfig/autocomplete
-#
-# gitui
-# - GitUI provides you with the comfort of a git GUI but right in your terminal
-# - Learn more at https://github.com/extrawurst/gitui
-#
-# gping
-# - A graphic alternative of the `ping` command
-# - Learn more at https://github.com/orf/gping
-#
-# hub
-# - A command-line tool that makes git easier to use with GitHub
-# - Learn more at https://github.com/github/hub
-#
-# hyperfine
-# - A command-line benchmarking tool
-# - Learn more at https://github.com/sharkdp/hyperfine
-#
-# jq
-# - A command-line JSON processor
-# - Learn more at https://github.com/stedolan/jq
-#
-# neofetch
-# - A command-line system information tool
-# - Learn more at https://github.com/dylanaraps/neofetch
-#
-# procs
-# - A modern replacement for the `ps` command
-# - Learn more at https://github.com/dalance/procs
-#
 # pygmentize
 # - An generic syntax highlighter written in Python. Used as a colorful `cat` command
 # - Learn more at https://github.com/pygments/pygments
-#
+
+# rbenv
+# - Manage your app's Ruby environment
+# - Learn more at https://github.com/rbenv/rbenv
+eval "$(rbenv init - zsh)"
+
+# thefuct
+# - Magnificent app which corrects your previous console command.
+# - Learn more at https://github.com/nvbn/thefuck
+#eval $(thefuck --alias)
+
 # tokei
 # - Tokei is a program that displays statistics about your code.
 # - Learn more at https://github.com/XAMPPRocky/tokei
-#
+
 # yq
 # - A portable command-line YAML, JSON, XML, CSV and properties processor, just like jq
 # - Learn more at https://github.com/mikefarah/yq
 
-## Remove duplicate entries in PATH
+#####
+####
+### Remove duplicate entries in PATH
+##
+#
+
 # Snippts from https://www.linuxjournal.com/content/removing-duplicate-path-entries
 # Use Perl
 #export PATH=$(perl -E 'chomp($_=<>);say join":",grep{$_&&!$_{$_}++}split/:/' <<<$PATH)
@@ -302,8 +334,6 @@ export PATH=$(echo $PATH | awk -v RS=: '!($0 in a) {a[$0]; printf("%s%s", col, $
 ########################
 # End of customization #
 ########################
-
-source /Users/hyperzsb/.config/broot/launcher/bash/br
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
