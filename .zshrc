@@ -137,9 +137,6 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 # Hyperledger Fabric Sample bin path
 #export PATH="$PLAYGROUND/hyperledger/fabric/fabric-samples/bin:$PATH"
 
-# BitXHub's GoDuck toolkit bin path
-#export PATH="$PLAYGROUND/blockchain/goduck:$PATH"
-
 # Unlock music command line tool bin path
 #export PATH="$GITHUB_PROJECTS/unlock-music-cli/cmd/um:$PATH"
 
@@ -225,7 +222,7 @@ autoload -U compinit && compinit -u
 source /Users/hyperzsb/.config/broot/launcher/bash/br
 
 # cheat
-# - An interactive cheatsheet tool on the command-line.
+# - An interactive cheatsheet tool on the command-line
 # - Learn more at https://github.com/cheat/cheat 
 
 # delta
@@ -306,13 +303,21 @@ alias goenv="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/st
 # - Learn more at https://github.com/rbenv/rbenv
 eval "$(rbenv init - zsh)"
 
+# terminalizer
+# - Record your terminal and generate animated gif images or share a web player
+# - Learn more at https://github.com/faressoft/terminalizer
+
 # thefuct
-# - Magnificent app which corrects your previous console command.
+# - Magnificent app which corrects your previous console command
 # - Learn more at https://github.com/nvbn/thefuck
 #eval $(thefuck --alias)
 
+# The Silver Searcher
+# A code-searching tool similar to ack, but faster
+# Learn more at https://github.com/ggreer/the_silver_searcher
+
 # tokei
-# - Tokei is a program that displays statistics about your code.
+# - Tokei is a program that displays statistics about your code
 # - Learn more at https://github.com/XAMPPRocky/tokei
 
 # yq
