@@ -1,0 +1,117 @@
+format = "[#](bold purple) $all"
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vicmd_symbol = "[<](bold green)"
+
+[aws]
+symbol = "aws "
+
+[c]
+format = "via [$symbol(($name-)$version )]($style)"
+symbol = "C "
+#symbol = " "
+
+[cmake]
+symbol = "cmake "
+
+[directory]
+read_only = " ro"
+
+[docker_context]
+symbol = "docker "
+
+[git_branch]
+symbol = "git "
+
+[git_commit]
+commit_hash_length = 6
+only_detached = false
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[golang]
+symbol = "go "
+
+[hg_branch]
+symbol = "hg "
+
+[hostname]
+format = "[-ssh-[$hostname](bold dimmed green)->](blue) in "
+#format = "[$ssh_symbol$hostname]($style) in "
+#ssh_symbol = "[-ssh-> ](blue)"
+#ssh_symbol = " "
+trim_at = ""
+
+[java]
+symbol = "java "
+
+[lua]
+symbol = "lua "
+
+[nodejs]
+symbol = "nodejs "
+
+[memory_usage]
+symbol = "memory "
+
+[nim]
+symbol = "nim "
+
+[nix_shell]
+symbol = "nix "
+
+[ocaml]
+symbol = "ml "
+
+[package]
+symbol = "pkg "
+
+[perl]
+symbol = "pl "
+
+[php]
+symbol = "php "
+
+[pulumi]
+symbol = "pulumi "
+
+[purescript]
+symbol = "purs "
+
+[python]
+symbol = "py "
+
+[raku]
+symbol = "raku "
+
+[ruby]
+symbol = "rb "
+
+[rust]
+symbol = "rs "
+
+[scala]
+symbol = "scala "
+
+[spack]
+symbol = "spack "
+
+[sudo]
+symbol = "sudo "
+
+[swift]
+symbol = "swift "
+
+[terraform]
+symbol = "terraform "
+
+[zig]
+symbol = "zig "
