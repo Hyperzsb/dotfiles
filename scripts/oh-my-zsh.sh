@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TARGET_FILES=("$HOME/.oh-my-zsh/custom/banner.zsh" "$HOME/.oh-my-zsh/custom/themes/ys.zsh-theme")
-DESTINATION_FILES=("./oh-my-zsh/banner.zsh" "./oh-my-zsh/themes/ys.zsh-theme")
+DESTINATION_FILES=("./.oh-my-zsh/banner.zsh" "./.oh-my-zsh/themes/ys.zsh-theme")
 
 for i in $(seq ${#TARGET_FILES[*]});
 do
