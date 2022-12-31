@@ -134,6 +134,9 @@ export PATH="$HOME/go/bin:$PATH"
 # Ruby 3.0.0 bin path
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 
+# Python unversioned bin path. macOS has removed Python 2.*
+export PATH="/usr/local/opt/python@3.10/libexec/bin:$PATH"
+
 # Hyperledger Fabric Sample bin path
 #export PATH="$PLAYGROUND/hyperledger/fabric/fabric-samples/bin:$PATH"
 
@@ -157,7 +160,7 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 ##
 #
 
-alias ccat="pygmentize -g"
+alias ccat="pygmentize -g -O style=dracula"
 alias l1="exa -a1F"
 alias la="exa -aglF --header"
 alias ld="exa -a1FD"

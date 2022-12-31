@@ -26,8 +26,8 @@
 
 # `init` command settings
 [init]
-    # The default branch is "master"
-    defaultBranch = "master"
+    # The default branch is "main"
+    defaultBranch = "main"
 
 # `commit` command settings
 [commit]
