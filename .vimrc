@@ -14,7 +14,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " vim-go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " nerdtree
 Plug 'preservim/nerdtree'
@@ -96,11 +96,11 @@ set selectmode=mouse,key
 set nocompatible
 
 " Auto load NERDTree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 " Auto exit NERDTree
 " Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+"autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " Enable gopls in vim-go
 ""let g:go_def_mode='gopls'

@@ -1,14 +1,14 @@
 # Core settings
 [core]
     # Global .gitignore
-	excludesfile = /Users/hyperzsb/.gitignore_global
+    excludesfile = /Users/hyperzsb/.gitignore_global
     # Use delta as the default pager. Learn more at https://github.com/dandavison/delta
     pager = delta
 
 # User infomation settings
 [user]
     # User name
-	name = Shaobo ZHANG
+    name = Shaobo ZHANG
     # User email
     email = hyperzsb@qq.com
     # GPG key
@@ -32,8 +32,8 @@
 # `commit` command settings
 [commit]
     # Set a commit messamge template
-	template = /Users/hyperzsb/.stCommitMsg
-	gpgsign = true
+    template = /Users/hyperzsb/.stCommitMsg
+    gpgsign = true
 
 # `merge` command settings
 [merge]
@@ -43,7 +43,7 @@
 
 # `push` command settings
 [push]
-	default = simple
+    default = simple
 
 # `pull` command settings
 [pull]
@@ -86,10 +86,11 @@
 #[mergetool "sourcetree"]
 #	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 #	trustExitCode = true
+
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
 [alias]
-	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+    ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"

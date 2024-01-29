@@ -1,3 +1,6 @@
+# Zsh profiling module
+#zmodload zsh/zprof
+
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
@@ -72,7 +75,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages zsh-autosuggestions zsh-syntax-highlighting wakatime)
+plugins=(git cgit colored-man-pages zsh-autosuggestions zsh-syntax-highlighting wakatime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -151,8 +154,7 @@ export PATH="/usr/local/opt/python@3.10/libexec/bin:$PATH"
 #export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
 # HTTP proxy setting
-#export http_proxy=http://127.0.0.1:7890
-#export https_proxy=$http_proxy
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 
 #####
 ####
@@ -166,17 +168,55 @@ alias la="exa -aglF --header"
 alias ld="exa -a1FD"
 alias lg="la --git"
 alias ls="exa -aF"
-#alias curl="curl -x http://127.0.0.1:7890"
+
+#####
+####
+### History
+##
+#
+##########
+# HISTORY
+##########
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+
+# Immediately append to history file:
+setopt INC_APPEND_HISTORY
+
+# Record timestamp in history:
+setopt EXTENDED_HISTORY
+
+# Expire duplicate entries first when trimming history:
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Dont record an entry that was just recorded again:
+setopt HIST_IGNORE_DUPS
+
+# Delete old recorded entry if new entry is a duplicate:
+setopt HIST_IGNORE_ALL_DUPS
+
+# Do not display a line previously found:
+setopt HIST_FIND_NO_DUPS
+
+# Dont record an entry starting with a space:
+setopt HIST_IGNORE_SPACE
+
+# Dont write duplicate entries in the history file:
+setopt HIST_SAVE_NO_DUPS
+
+# Share history between all sessions:
+setopt SHARE_HISTORY
+
+# Execute commands using history (e.g.: using !$) immediatel:
+unsetopt HIST_VERIFY
 
 #####
 ####
 ### Miscellaneous Settings
 ##
 #
-
-# HTTP proxy setting
-#export http_proxy=http://127.0.0.1:7890
-#export https_proxy=$http_proxy
 
 # GPG setting. Learn more at https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
 export GPG_TTY=$(tty)
@@ -293,9 +333,9 @@ alias goenv="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/st
 # pyenv
 # - Simple Python version management
 # - Learn more at https://github.com/pyenv/pyenv#getting-pyenv
-#export PYENV_ROOT="$HOME/.pyenv"
-#command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-#eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # pygmentize
 # - An generic syntax highlighter written in Python. Used as a colorful `cat` command
@@ -345,3 +385,6 @@ export PATH=$(echo $PATH | awk -v RS=: '!($0 in a) {a[$0]; printf("%s%s", col, $
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# Zsh profiling module
+#zprof
