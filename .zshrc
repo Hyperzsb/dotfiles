@@ -128,6 +128,9 @@ fi
 PLAYGROUND="$HOME/Private/playground"
 GITHUB_PROJECTS="$PLAYGROUND/github-projects"
 
+# /usr/local/bin path
+export PATH="/usr/local/bin:$PATH"
+
 # /usr/local/sbin path
 export PATH="/usr/local/sbin:$PATH"
 
@@ -138,7 +141,7 @@ export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 
 # Python unversioned bin path. macOS has removed Python 2.*
-export PATH="/usr/local/opt/python@3.10/libexec/bin:$PATH"
+#export PATH="/usr/local/opt/python@3.12/libexec/bin:$PATH"
 
 # Hyperledger Fabric Sample bin path
 #export PATH="$PLAYGROUND/hyperledger/fabric/fabric-samples/bin:$PATH"
