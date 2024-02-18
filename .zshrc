@@ -166,11 +166,10 @@ export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_pr
 #
 
 alias ccat="pygmentize -g -O style=dracula"
-alias l1="exa -a1F"
-alias la="exa -aglF --header"
-alias ld="exa -a1FD"
+alias ls="eza -aF"
+alias la="eza -aglF --header --group-directories-first"
+alias ld="la -a1FD"
 alias lg="la --git"
-alias ls="exa -aF"
 
 #####
 ####
@@ -240,9 +239,9 @@ export SDKROOT=$(xcrun --show-sdk-path)
 # - A code search tool for general purposes
 # - Learn more at https://github.com/ggreer/the_silver_searcher
 
-# Atuin 
+# Atuin
 # - Atuin replaces your existing shell history with a SQLite database, and records additional context for your commands.
-# - Learn more at https://github.com/ellie/atuin 
+# - Learn more at https://github.com/ellie/atuin
 #export ATUIN_NOBIND="true"
 #eval "$(atuin init zsh)"
 #bindkey '^r' _atuin_search_widget
@@ -269,14 +268,14 @@ source /Users/hyperzsb/.config/broot/launcher/bash/br
 
 # cheat
 # - An interactive cheatsheet tool on the command-line
-# - Learn more at https://github.com/cheat/cheat 
+# - Learn more at https://github.com/cheat/cheat
 
 # delta
 # - A syntax-highlighting pager for git, diff, and grep output
 # - Learn more at https://github.com/dandavison/delta
 
 # dust
-# - A more intuitive version of `du` in rust 
+# - A more intuitive version of `du` in rust
 # - Learn more at https://github.com/bootandy/dust
 
 # exa
@@ -297,7 +296,7 @@ source /Users/hyperzsb/.config/broot/launcher/bash/br
 # - Learn more at https://github.com/stefanmaric/g
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias goenv="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
- 
+
 # gitui
 # - GitUI provides you with the comfort of a git GUI but right in your terminal
 # - Learn more at https://github.com/extrawurst/gitui

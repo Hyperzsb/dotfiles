@@ -1,14 +1,14 @@
 # Core settings
 [core]
     # Global .gitignore
-	excludesfile = /Users/hyperzsb/.gitignore_global
+    excludesfile = /Users/hyperzsb/.gitignore_global
     # Use delta as the default pager. Learn more at https://github.com/dandavison/delta
     pager = delta
 
 # User infomation settings
 [user]
     # User name
-	name = Shaobo ZHANG
+    name = Shaobo ZHANG
     # User email
     email = hyperzsb@qq.com
     # GPG key
@@ -17,12 +17,12 @@
 # HTTP protocol settings
 [http]
     # Use HTTP proxy
-#   proxy = http://127.0.0.1:7890
+    #proxy = http://127.0.0.1:7890
 
 # HTTPS protocol settings
 [https]
     # Use HTTPS proxy
-#   proxy = https://127.0.0.1:7890
+    #proxy = https://127.0.0.1:7890
 
 # `init` command settings
 [init]
@@ -32,8 +32,8 @@
 # `commit` command settings
 [commit]
     # Set a commit messamge template
-	template = /Users/hyperzsb/.stCommitMsg
-	gpgsign = true
+    template = /Users/hyperzsb/.stCommitMsg
+    gpgsign = true
 
 # `merge` command settings
 [merge]
@@ -43,7 +43,7 @@
 
 # `push` command settings
 [push]
-	default = simple
+    default = simple
 
 # `pull` command settings
 [pull]
@@ -79,17 +79,18 @@
 
 # Use sourcetree as the diff tool. Learn more at https://www.sourcetreeapp.com/
 #[difftool "sourcetree"]
-#	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-#	path =
-
+    #cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    #path =
 # Use sourcetree as the merge tool. Learn more at https://www.sourcetreeapp.com/
 #[mergetool "sourcetree"]
-#	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-#	trustExitCode = true
+    #cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    #trustExitCode = true
+
 [filter "lfs"]
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+
 [alias]
-	ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
+    ignore = "!gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}; gi"
