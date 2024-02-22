@@ -14,12 +14,10 @@
     # GPG key
     signingkey = <gpg_key_id>
 
-# HTTP protocol settings
+# HTTP/HTTPS protocol settings
 [http]
     # Use HTTP proxy
     #proxy = http://127.0.0.1:7890
-
-# HTTPS protocol settings
 [https]
     # Use HTTPS proxy
     #proxy = https://127.0.0.1:7890
@@ -66,7 +64,6 @@
     features = decorations
     navigate = true    # use n and N to move between diff sections
     light = false
-
 [delta "decorations"]
     commit-decoration-style = blue ol
     commit-style = raw
@@ -81,6 +78,7 @@
 #[difftool "sourcetree"]
     #cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     #path =
+
 # Use sourcetree as the merge tool. Learn more at https://www.sourcetreeapp.com/
 #[mergetool "sourcetree"]
     #cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"

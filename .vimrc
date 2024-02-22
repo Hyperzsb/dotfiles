@@ -1,5 +1,7 @@
 "
 " vim-plug settings
+" - Minimalist Vim Plugin Manager
+" - Learn more at https://github.com/junegunn/vim-plug
 "
 
 " Install vim-plug before use
@@ -45,16 +47,26 @@ call plug#begin('~/.vim/plugged')
     "Plug 'neoclide/coc.nvim', {'branch': 'release'}
     "source $HOME/.vim/config/coc.vim
 
-    " ack.vim with the silver searcher
-    " - Vim plugin for the Perl module / CLI script 'ack'
-    " - Learn more at https://github.com/mileszs/ack.vim
-    Plug 'mileszs/ack.vim'
-    let g:ackprg = 'ag --nogroup --nocolor --column'
+    " vim-fugitive
+    " - fugitive.vim: A Git wrapper so awesome, it should be illegal
+    " - Learn more at https://github.com/tpope/vim-fugitive
+    "Plug 'tpope/vim-fugitive'
 
     " fzf
     " - A command-line fuzzy finder
     " - Learn more at https://github.com/junegunn/fzf
-    Plug 'junegunn/fzf'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
+    " fzf.vim
+    " full-fledged fzf support for vim
+    " Learn more at https://github.com/junegunn/fzf.vim
+    Plug 'junegunn/fzf.vim'
+
+    " vim-airline
+    " - lean & mean status/tabline for vim that's light as air
+    " - Learn more at https://github.com/vim-airline/vim-airline
+    "Plug 'vim-airline/vim-airline'
+    "let g:airline_section_z="(row\ %l\/%L\ col\ %c\ %P)"
 
     " nerdtree
     " - A tree explorer plugin for vim
@@ -67,17 +79,6 @@ call plug#begin('~/.vim/plugged')
     " Close the tab if NERDTree is the only window remaining in it.
     "autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
-    " vim-airline
-    " - lean & mean status/tabline for vim that's light as air
-    " - Learn more at https://github.com/vim-airline/vim-airline
-    "Plug 'vim-airline/vim-airline'
-    "let g:airline_section_z="(row\ %l\/%L\ col\ %c\ %P)"
-
-    " lightline
-    " - A light and configurable statusline/tabline plugin for Vim
-    " - Learn more at https://github.com/itchyny/lightline.vim
-    "Plug 'itchyny/lightline.vim'
-
     " vim-devicons
     " - Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
     " - Learn more at https://github.com/ryanoasis/vim-devicons
@@ -89,18 +90,8 @@ call plug#begin('~/.vim/plugged')
     "Plug 'joshdick/onedark.vim'
 call plug#end()
 
-" Use 24-bit (true-color) mode in Vim/Neovim when outside tmux
-if (empty($TMUX))
-  if (has("nvim"))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
-
 "
-" Editor settings
+" General editor settings
 "
 
 " Use pure vim setting instead of vi-compatible setting
@@ -126,6 +117,15 @@ set history=1000
 
 " Set the colorscheme
 "colorscheme one
+" Use 24-bit (true-color) mode in Vim/Neovim when outside tmux
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
 
 " Show the current mode
 set showmode
