@@ -105,13 +105,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#################
-# Customization #
-#################
+##########################
+# Start of Customization #
+##########################
 
 #####
 ####
-### Custom environment variables
+### Environment variables
 ##
 #
 
@@ -158,76 +158,6 @@ export PATH="$HOME/.gem/ruby/3.0.0/bin:$PATH"
 
 # HTTP proxy setting
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
-
-#####
-####
-### Alias
-##
-#
-
-alias ccat="pygmentize -g -O style=dracula"
-alias ls="eza -aF"
-alias la="eza -aglF --header --group-directories-first"
-alias ld="la -a1FD"
-alias lg="la --git"
-
-#####
-####
-### History
-##
-#
-##########
-# HISTORY
-##########
-
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
-
-# Immediately append to history file:
-setopt INC_APPEND_HISTORY
-
-# Record timestamp in history:
-setopt EXTENDED_HISTORY
-
-# Expire duplicate entries first when trimming history:
-setopt HIST_EXPIRE_DUPS_FIRST
-
-# Dont record an entry that was just recorded again:
-setopt HIST_IGNORE_DUPS
-
-# Delete old recorded entry if new entry is a duplicate:
-setopt HIST_IGNORE_ALL_DUPS
-
-# Do not display a line previously found:
-setopt HIST_FIND_NO_DUPS
-
-# Dont record an entry starting with a space:
-setopt HIST_IGNORE_SPACE
-
-# Dont write duplicate entries in the history file:
-setopt HIST_SAVE_NO_DUPS
-
-# Share history between all sessions:
-setopt SHARE_HISTORY
-
-# Execute commands using history (e.g.: using !$) immediatel:
-unsetopt HIST_VERIFY
-
-#####
-####
-### Miscellaneous Settings
-##
-#
-
-# GPG setting. Learn more at https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
-export GPG_TTY=$(tty)
-
-# iTerm2 shell integration setting. Learn more at https://github.com/browsh-org/browsh
-#source ~/.iterm2_shell_integration.zsh
-
-# Jekyll build setting
-export SDKROOT=$(xcrun --show-sdk-path)
 
 #####
 ####
@@ -281,6 +211,10 @@ source /Users/hyperzsb/.config/broot/launcher/bash/br
 # exa
 # - A colorful alternative of the outstanding `ls` command
 # - Learn more at https://github.com/ogham/exa
+
+# eza
+# - A modern, maintained replacement for ls
+# - Learn more at https://github.com/eza-community/eza
 
 # fig
 # - An auto-completion tool for various terminals
@@ -368,6 +302,73 @@ eval "$(rbenv init - zsh)"
 # yq
 # - A portable command-line YAML, JSON, XML, CSV and properties processor, just like jq
 # - Learn more at https://github.com/mikefarah/yq
+
+#####
+####
+### Alias
+##
+#
+
+alias ccat="pygmentize -g -O style=dracula"
+alias ls="eza -aF"
+alias la="eza -aglF --header --group-directories-first"
+alias ld="la -a1FD"
+alias lg="la --git"
+
+#####
+####
+### History
+##
+#
+
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+
+# Immediately append to history file:
+setopt INC_APPEND_HISTORY
+
+# Record timestamp in history:
+setopt EXTENDED_HISTORY
+
+# Expire duplicate entries first when trimming history:
+setopt HIST_EXPIRE_DUPS_FIRST
+
+# Dont record an entry that was just recorded again:
+setopt HIST_IGNORE_DUPS
+
+# Delete old recorded entry if new entry is a duplicate:
+setopt HIST_IGNORE_ALL_DUPS
+
+# Do not display a line previously found:
+setopt HIST_FIND_NO_DUPS
+
+# Dont record an entry starting with a space:
+setopt HIST_IGNORE_SPACE
+
+# Dont write duplicate entries in the history file:
+setopt HIST_SAVE_NO_DUPS
+
+# Share history between all sessions:
+setopt SHARE_HISTORY
+
+# Execute commands using history (e.g.: using !$) immediatel:
+unsetopt HIST_VERIFY
+
+#####
+####
+### Miscellaneous Settings
+##
+#
+
+# GPG setting. Learn more at https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key
+export GPG_TTY=$(tty)
+
+# iTerm2 shell integration setting. Learn more at https://github.com/browsh-org/browsh
+#source ~/.iterm2_shell_integration.zsh
+
+# Jekyll build setting
+export SDKROOT=$(xcrun --show-sdk-path)
 
 #####
 ####
